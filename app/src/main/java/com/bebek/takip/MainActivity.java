@@ -25,9 +25,6 @@ public class MainActivity extends Activity {
                 //Starting a new Intent
                 Intent nextScreen = new Intent(getApplicationContext(), secimyapilan.class);
 
-                //Sending data to another Activity
-
-
                 // starting new activity
                 startActivity(nextScreen);
 

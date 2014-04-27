@@ -16,6 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".secimyapilan"></activity>
+        <activity android:name=".bebekodasi"></activity>
+        <activity android:name=".bebekhakkindaaciklama"></activity>
+
+
     </application>
 
 </manifest>
