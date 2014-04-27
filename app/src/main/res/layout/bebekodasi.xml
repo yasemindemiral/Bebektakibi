@@ -1,0 +1,72 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/abc_search_url_text_normal"
+    android:gravity="center"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.bebek.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/textEpostaGir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bebeğinizi izlemek için öncelikle e-posta adresinizi girip, gelen doğrulama kodunu aşağıdaki boşluğa giriniz. " />
+
+    <requestFocus
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editEposta"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textEpostaGir"
+        android:layout_below="@+id/textEpostaGir"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/buttonTamam"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textEpostaGir"
+        android:layout_below="@+id/editEposta"
+        android:layout_marginTop="20dp"
+        android:text="Tamam" />
+    <TextView
+        android:id="@+id/textOnayla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonTamam"
+        android:text="Onayla:" />
+    <EditText
+        android:id="@+id/editOnayla"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textOnayla"
+        android:ems="10"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/buttonOnayla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editOnayla"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Onayla" />
+
+    <Button
+        android:id="@+id/buttonIptal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/buttonOnayla"
+        android:layout_centerHorizontal="true"
+        android:text="İptal" />
+
+</RelativeLayout>
