@@ -1,9 +1,17 @@
 
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context="com.example.bebek.MainActivity$PlaceholderFragment"
+android:id="@+id/scroll"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/abc_search_url_text_normal"
+    android:background="@android:color/background_dark"
     android:gravity="center"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -69,4 +77,6 @@
         android:layout_centerHorizontal="true"
         android:text="İptal" />
 
+
 </RelativeLayout>
+</ScrollView>
