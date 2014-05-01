@@ -13,6 +13,7 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -116,6 +117,8 @@ public class bebekodasi extends Activity {
                 if(randomsayı.equals(onaykodu)){
                     Toast.makeText(getApplicationContext(),
                             "Doğru", Toast.LENGTH_LONG).show();
+                    Intent nextScreen = new Intent(getApplicationContext(), kamera.class);
+                    startActivity(nextScreen);
                 }
                 else {
                     Toast.makeText(getApplicationContext(),

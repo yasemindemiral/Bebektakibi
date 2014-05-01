@@ -20,6 +20,7 @@
         <activity android:name=".secimyapilan"></activity>
         <activity android:name=".bebekodasi"></activity>
         <activity android:name=".bebekhakkindaaciklama"></activity>
+        <activity android:name=".kamera"></activity>
 
 
     </application>
