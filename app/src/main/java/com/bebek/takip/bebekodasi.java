@@ -18,6 +18,7 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by yasemin on 4/30/14.
@@ -43,7 +44,9 @@ public class bebekodasi extends Activity {
         setContentView(R.layout.bebekodasi);
         final EditText editOnayla = (EditText) findViewById(R.id.editOnayla);
         final EditText editEposta = (EditText) findViewById(R.id.editEposta);
+        final EditText invisible = (EditText) findViewById(R.id.editText);
         Button buttontamam = (Button) findViewById(R.id.buttonTamam);
+        Button buttunOnayla = (Button) findViewById(R.id.buttonOnayla);
         buttontamam.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
@@ -52,7 +55,7 @@ public class bebekodasi extends Activity {
                 final Integer rndnumber = numGen.nextInt(1000);
                 //txt.setText(String.valueOf(rNumber));
                 final String rNumber = rndnumber.toString();
-                editOnayla.setText(String.valueOf(rndnumber));
+                invisible.setText(String.valueOf(rndnumber));
 
 
 
@@ -73,15 +76,17 @@ public class bebekodasi extends Activity {
                     public void run() {
 
                         try {
-                           // message.setFrom(new InternetAddress("yasmindemiral@gmail.com"));
+                            // message.setFrom(new InternetAddress("yasmindemiral@gmail.com"));
                             message.setFrom(new InternetAddress(posta));
                             message.setRecipients(Message.RecipientType.TO,
-                                  //  InternetAddress.parse("yasmindemiral@gmail.com"));
+                                    //  InternetAddress.parse("yasmindemiral@gmail.com"));
                                     InternetAddress.parse(posta));
                             message.setSubject("Kullanıcı Kodu");
-                           // message.setText("Test");
+                            // message.setText("Test");
                             message.setText(rNumber);
                             Transport.send(message);
+
+
 
                         } catch (AddressException e) {
                             // TODO Auto-generated catch block
@@ -95,12 +100,29 @@ public class bebekodasi extends Activity {
                 };
                 Thread t = new Thread(r);
                 t.start();
+                Toast.makeText(getApplicationContext(),
+                        "Lütfen Gelen Kutunuzu Kontrol Ediniz", Toast.LENGTH_LONG).show();
 
 
             }
         });
 
+        buttunOnayla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String randomsayı = invisible.getText().toString();
+                final String onaykodu = editOnayla.getText().toString();
 
+                if(randomsayı.equals(onaykodu)){
+                    Toast.makeText(getApplicationContext(),
+                            "Doğru", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),
+                            "Yanlış", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
 
