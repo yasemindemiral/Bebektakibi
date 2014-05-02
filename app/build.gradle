@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:support-v4:+'
     compile files('libs/additionnal.jar')
     compile files('libs/mail.jar')
+    compile files('libs/opencv library-2.4.8.jar')
 }

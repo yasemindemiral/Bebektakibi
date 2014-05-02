@@ -17,9 +17,14 @@
 
         <TextView
             android:id="@+id/textAciklamaLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bebeğiniz izlemek isterseniz aşağıdaki butona tıklamanız yeterli" />
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Bebeğiniz izlemek isterseniz aşağıdaki butona tıklamanız yeterli
+            j
+            n
+            nh
+            nh
+            fbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"/>
 
         <Button
             android:id="@+id/buttonIzleniyor"
