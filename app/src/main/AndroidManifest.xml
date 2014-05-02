@@ -3,6 +3,8 @@
     package="com.bebek.takip" >
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -21,6 +23,7 @@
         <activity android:name=".bebekodasi"></activity>
         <activity android:name=".bebekhakkindaaciklama"></activity>
         <activity android:name=".kamera"></activity>
+        <activity android:name=".ses.NoiseAlert"></activity>
 
 
     </application>

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.bebek.takip.ses.NoiseAlert;
+
 public class MainActivity extends Activity {
     public Button buttonbasla;
 
@@ -24,7 +26,7 @@ public class MainActivity extends Activity {
 
             public void onClick(View arg0) {
                 //Starting a new Intent
-                Intent nextScreen = new Intent(getApplicationContext(), secimyapilan.class);
+                Intent nextScreen = new Intent(getApplicationContext(), NoiseAlert.class);
                 // starting new activity
                 startActivity(nextScreen);
 
