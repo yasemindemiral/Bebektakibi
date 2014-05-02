@@ -1,6 +1,8 @@
 package com.bebek.takip.hareket.data;
 
 /**
+ * This class is used to store preferences on how to decode images and what to save.
+ *
  * Created by yasemin on 5/2/14.
  */
 public abstract class Preferences {

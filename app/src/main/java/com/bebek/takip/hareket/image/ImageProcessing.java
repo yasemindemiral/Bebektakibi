@@ -8,6 +8,8 @@ import android.graphics.Matrix;
 import java.io.ByteArrayOutputStream;
 
 /**
+ * This abstract class is used to process images.
+ *
  * Created by yasemin on 5/3/14.
  */
 public abstract  class ImageProcessing {public static final int A = 0;
