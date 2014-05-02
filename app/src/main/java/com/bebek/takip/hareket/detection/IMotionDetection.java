@@ -1,6 +1,8 @@
 package com.bebek.takip.hareket.detection;
 
 /**
+ * This interface is used to represent a class that can detect motion
+ *
  * Created by yasemin on 5/2/14.
  */
 public interface IMotionDetection {public int[] getPrevious();

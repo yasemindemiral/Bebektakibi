@@ -1,6 +1,9 @@
 package com.bebek.takip.hareket.detection;
 
 /**
+ * This class is adapted from the web site below. It creates a state object based on the brightness of a RGB image
+ * represented by an integer array.
+ *
  * Created by yasemin on 5/3/14.
  */
 public class State {private int[] map = null;

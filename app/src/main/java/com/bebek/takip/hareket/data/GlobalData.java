@@ -3,6 +3,8 @@ package com.bebek.takip.hareket.data;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
+ * This class is used to store global data.
+ *
  * Created by yasemin on 5/2/14.
  */
 public abstract class GlobalData {

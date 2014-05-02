@@ -3,6 +3,8 @@ package com.bebek.takip.hareket.detection;
 import android.graphics.Color;
 
 /**
+ * It is used to compare two State objects
+ *
  * Created by yasemin on 5/2/14.
  */
 public class Comparer {private State state1 = null;

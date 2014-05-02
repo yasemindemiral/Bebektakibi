@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
+ * This class extends Activity and processes sensor data and location data. It is used to
+ * detect when the phone is in motion, so we do not try to detect motion.
+ *
  * Created by yasemin on 5/3/14.
  */
 public class SensorActivity extends Activity implements SensorEventListener {

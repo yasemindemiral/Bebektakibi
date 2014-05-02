@@ -3,6 +3,8 @@ package com.bebek.takip.hareket.detection;
 import android.util.Log;
 
 /**
+ * This class is used to process integer arrays containing luma data and detects motion using an aggregate map.
+ *
  * Created by yasemin on 5/2/14.
  */
 public class AggregateLumaMotionDetection implements IMotionDetection{
