@@ -4,5 +4,6 @@
     <string name="app_name">Bebektakibi</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="hint_eposta">hint_eposta</string>
 
 </resources>
