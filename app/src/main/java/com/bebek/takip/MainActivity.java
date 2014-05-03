@@ -19,10 +19,12 @@ public class MainActivity extends Activity {
 
         buttonbasla = (Button) findViewById(R.id.buttonBasla);
 
+
         //Listening to button event
         buttonbasla.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
+
                 //Starting a new Intent
                 Intent nextScreen = new Intent(getApplicationContext(), secimyapilan.class);
 

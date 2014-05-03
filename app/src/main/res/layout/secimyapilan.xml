@@ -14,23 +14,25 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin" >
-        <Button
+        <ImageButton
             android:id="@+id/buttonAile"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_marginTop="149dp"
+            android:text="Aile"
+            android:src="@drawable/green_buton_aile"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="154dp"
-            android:text="Aile" />
+            android:layout_centerHorizontal="true" />
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonBebekOdasi"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bebek Odasını İzle"
+            android:src="@drawable/green_buton_bebek"
             android:layout_below="@+id/buttonAile"
-            android:layout_marginTop="118dp"
-            android:text="Bebek Odasını İzle" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="61dp" />
 
     </RelativeLayout>
 </ScrollView>

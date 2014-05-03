@@ -29,14 +29,22 @@
 
             />
 
-        <Button
-            android:id="@+id/buttonBasla"
-            android:layout_width="fill_parent"
+        <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Başla"
+            android:id="@+id/buttonBasla"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="300dp" />
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/green_buton2" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:layout_above="@+id/buttonBasla"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="87dp" />
+
 
     </RelativeLayout>
 </ScrollView>

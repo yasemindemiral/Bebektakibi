@@ -26,14 +26,25 @@
             nh
             fbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonIzleniyor"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="53dp"
-            android:text="İzlemeye Başla" />
+            android:text="İzlemeye Başla"
+            android:src="@drawable/green_buton2" />
+
+        <TextView
+            android:id="@+id/textIzleniyor"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="İzlemeye başlamak için butona basın"
+            android:layout_marginBottom="68dp"
+            android:layout_above="@+id/buttonIzleniyor"
+            android:layout_alignParentRight="true" />
+
 
     </RelativeLayout>
 </ScrollView>

@@ -17,7 +17,9 @@
         android:id="@+id/textEpostaGir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bebeğinizi izlemek için öncelikle e-posta adresinizi girip, gelen doğrulama kodunu aşağıdaki boşluğa giriniz. " />
+        android:text="Bebeğinizi izlemek için öncelikle e-posta adresinizi girip, gelen doğrulama kodunu aşağıdaki boşluğa giriniz. "
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
 
     <requestFocus
         android:layout_width="wrap_content"
@@ -32,14 +34,15 @@
         android:ems="10"
         android:inputType="textEmailAddress" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonTamam"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/textEpostaGir"
         android:layout_below="@+id/editEposta"
         android:layout_marginTop="20dp"
-        android:text="Tamam" />
+        android:text="Tamam"
+        android:src="@drawable/green_buton_tamam" />
     <TextView
         android:id="@+id/textOnayla"
         android:layout_width="wrap_content"
@@ -54,22 +57,24 @@
         android:ems="10"
         android:inputType="text" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonOnayla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editOnayla"
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
-        android:text="Onayla" />
+        android:text="Onayla"
+        android:src="@drawable/green_buton_onayla" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonIptal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="İptal"
+        android:src="@drawable/green_buton_iptal"
         android:layout_alignTop="@+id/buttonOnayla"
-        android:layout_centerHorizontal="true"
-        android:text="İptal" />
+        android:layout_alignRight="@+id/editOnayla" />
 
     <EditText
         android:layout_width="wrap_content"
