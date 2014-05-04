@@ -1,0 +1,17 @@
+  motion detection android manifestler düzenlencek...
+    noise ve motion detection xml leri düzenlencek
+    intent olayında motion ve noise sıralaması yapılcak
+
+    Sms olayı yerine bildirim muhabbeti var..
+    uygulama ilk başlatıldığında service is running yazmalı bildirimlerde
+    Json yada soap service yazma muhabbeti
+    İnternet mesaj olsa süper olur aslında ama olmadı mail de mi koysak
+    anne butonunda şimdi izle kısmında live video streaming olmalı anne kısmı iş yapar gibi olsun diye..jni siz olssa güzel olur :D
+
+ mail authentication ı her seferinde yapmıcak..
+ eye detection olsa fena olmaz
+ hala opencv kullanmadık
+ hayat hikayemiz nerelerde devam edecek acaba
+
+ merakla bekliyoruz.. error almayınca üzülüp error alınca mutlu olan bir topluluk var :D heheheh o da biz :D
+ size mektup yazdım :D hepimize kolay gelsin :) adiyoooos  :)) 4 mayıs 2014 saat 17.52.15
