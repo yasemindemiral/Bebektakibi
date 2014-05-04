@@ -5,19 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * Created by yasemin on 4/27/14.
  */
 public class secimyapilan extends Activity{
-    public Button buttonAile, buttonBebekOdası;
+    public ImageButton buttonAile, buttonBebekOdası;
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.secimyapilan);
-        buttonAile = (Button) findViewById(R.id.buttonAile);
-        buttonBebekOdası = (Button) findViewById(R.id.buttonBebekOdasi);
+        buttonAile = (ImageButton) findViewById(R.id.buttonAile);
+        buttonBebekOdası = (ImageButton) findViewById(R.id.buttonBebekOdasi);
 
         //Listening to button event
         buttonAile.setOnClickListener(new View.OnClickListener() {

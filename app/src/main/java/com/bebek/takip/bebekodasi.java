@@ -19,6 +19,7 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 /**
@@ -46,8 +47,8 @@ public class bebekodasi extends Activity {
         final EditText editOnayla = (EditText) findViewById(R.id.editOnayla);
         final EditText editEposta = (EditText) findViewById(R.id.editEposta);
         final EditText invisible = (EditText) findViewById(R.id.editText);
-        Button buttontamam = (Button) findViewById(R.id.buttonTamam);
-        Button buttunOnayla = (Button) findViewById(R.id.buttonOnayla);
+        ImageButton buttontamam = (ImageButton) findViewById(R.id.buttonTamam);
+        ImageButton buttunOnayla = (ImageButton) findViewById(R.id.buttonOnayla);
         buttontamam.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {

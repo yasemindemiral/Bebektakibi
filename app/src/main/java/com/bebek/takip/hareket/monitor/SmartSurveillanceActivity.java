@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,7 +48,7 @@ public class SmartSurveillanceActivity extends Activity{
         };
         SMS.addTextChangedListener(smsTextWatcher);
         Log.e(TAG, "onCreate");
-        Button startButton = (Button)findViewById(R.id.startbutton);
+        ImageButton startButton = (ImageButton)findViewById(R.id.startbutton);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {

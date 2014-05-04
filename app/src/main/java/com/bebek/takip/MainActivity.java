@@ -7,9 +7,10 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
-    public Button buttonbasla;
+    public ImageButton buttonbasla;
 
 
     @Override
@@ -17,7 +18,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_main);
 
-        buttonbasla = (Button) findViewById(R.id.buttonBasla);
+        buttonbasla = (ImageButton) findViewById(R.id.buttonBasla);
 
 
         //Listening to button event
