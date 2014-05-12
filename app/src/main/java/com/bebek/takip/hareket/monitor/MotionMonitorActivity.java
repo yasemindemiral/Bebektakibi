@@ -1,5 +1,6 @@
 package com.bebek.takip.hareket.monitor;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.hardware.Camera;
@@ -163,7 +164,7 @@ public class MotionMonitorActivity extends SensorActivity {
 
         return result;
     }
-    private static final class DetectionThread extends Thread{
+    private final class DetectionThread extends Thread{
         private byte[] data;
         private int width;
         private int height;
@@ -190,9 +191,14 @@ public class MotionMonitorActivity extends SensorActivity {
                 Log.d(TAG, "conversion=" + (aConversion - bConversion));
                 if(img!=null &&detector.detect(img, width, height)){
                     sendSMS(ref);
+
                     long now = System.currentTimeMillis();
                     Log.d(TAG, "motion detected at: "+ now);
+
+                    Intent startNoise = new Intent("com.bebek.takip.ses.NOISE");
+                    startActivity(startNoise);
                 }
+
             }catch(Exception e){
                 e.printStackTrace();
             }finally{

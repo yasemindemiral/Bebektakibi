@@ -29,7 +29,16 @@
         <activity android:name="com.bebek.takip.bebekodasi" />
         <activity android:name="com.bebek.takip.bebekhakkindaaciklama" />
         <activity android:name="com.bebek.takip.kamera" />
-        <activity android:name="com.bebek.takip.ses.NoiseAlert" />
+
+        <activity
+            android:label="@string/app_name"
+            android:name=".ses.NoiseAlert"
+            android:screenOrientation="portrait">
+            <intent-filter >
+                <action android:name="com.bebek.takip.ses.NOISE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:label="@string/app_name"
