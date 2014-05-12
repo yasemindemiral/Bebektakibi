@@ -21,7 +21,7 @@ import com.bebek.takip.R;
  */
 public class SmartSurveillanceActivity extends Activity{
     private static final String TAG = "SurvCamTest";
-    public static final String PREF_NAME = "com_bebek_takip_hareket_monitor_SmartSurveillance";
+    public static final String PREF_NAME = "com.bebek.takip.hareket.monitor.SMARTSURVEILLANCEACTIVITY";
     private static int smsLength = 124;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,7 @@ public class SmartSurveillanceActivity extends Activity{
                     editor.putString("phoneNumber", phoneNumber);
                     editor.putString("SMSContent", smsContent);
                     editor.commit();
-                    Intent startMotionDetection = new Intent("com.neu.nur.MONITORMOTIONACTIVITY");
+                    Intent startMotionDetection = new Intent("com.bebek.takip.hareket.monitor.MONITOR");
                     startActivity(startMotionDetection);
                 }
 				/*Button b = (Button)arg0;

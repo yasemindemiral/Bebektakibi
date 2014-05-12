@@ -36,7 +36,7 @@ public class MotionMonitorActivity extends SensorActivity {
     private static boolean inPreview = false;
     private static IMotionDetection detector = null;
     public  static MotionMonitorActivity ref= null;
-    public static final String PREF_NAME = "com_bebek_takip_hareket_monitor_SmartSurveillance";
+    public static final String PREF_NAME = "com.bebek.takip.hareket.monitor.SMARTSURVEILLANCEACTIVITY";
     public static String phoneNumber = null;
     public static String smsContent = null;
     public static long lastSMSsentAt = 0;
@@ -45,9 +45,9 @@ public class MotionMonitorActivity extends SensorActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ref = this;
-      //  setContentView(R.layout.surface_view);
-        //Log.e("motionMonitor", "onCreate");
-       // preview = (SurfaceView)findViewById(R.id.preview);
+        setContentView(R.layout.surface_view);
+        Log.e("motionMonitor","onCreate");
+        preview = (SurfaceView)findViewById(R.id.preview);
         previewHolder = preview.getHolder();
         previewHolder.addCallback(surfaceCallback);
         previewHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);

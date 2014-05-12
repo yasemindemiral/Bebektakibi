@@ -30,7 +30,27 @@
         <activity android:name="com.bebek.takip.bebekhakkindaaciklama" />
         <activity android:name="com.bebek.takip.kamera" />
         <activity android:name="com.bebek.takip.ses.NoiseAlert" />
-        <activity android:name="com.bebek.takip.hareket.monitor.SmartSurveillanceActivity" />
+
+        <activity
+            android:label="@string/app_name"
+            android:name=".hareket.monitor.MotionMonitorActivity"
+            android:screenOrientation="portrait">
+            <intent-filter >
+                <action android:name="com.bebek.takip.hareket.monitor.MONITOR" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name=".hareket.monitor.SmartSurveillanceActivity"
+            android:screenOrientation="portrait">
+            <intent-filter >
+                <action android:name="com.bebek.takip.hareket.monitor.SMARTSURVEILLANCEACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
     <uses-permission android:name="android.permission.VIBRATE" />
