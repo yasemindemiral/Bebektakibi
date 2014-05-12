@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.bebek.takip.canlıekrangörüntüsü.FarCamActivity;
+import com.bebek.takip.hareket.monitor.SmartSurveillanceActivity;
+
 public class MainActivity extends Activity {
     public ImageButton buttonbasla;
 
@@ -25,7 +28,7 @@ public class MainActivity extends Activity {
 
             public void onClick(View arg0) {
                 //Starting a new Intent
-                Intent nextScreen = new Intent(getApplicationContext(), secimyapilan.class);
+                Intent nextScreen = new Intent(getApplicationContext(), FarCamActivity.class);
 
                 // starting new activity
                 startActivity(nextScreen);

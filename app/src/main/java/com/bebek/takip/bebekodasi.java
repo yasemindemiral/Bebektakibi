@@ -61,8 +61,8 @@ public class bebekodasi extends Activity {
 
 
 
-                final String username = "applockermail@gmail.com";
-                final String password = "app192837";
+                final String username = "bebektakibi@gmail.com";
+                final String password = "bebektakibi2014";
                 final String posta = editEposta.getText().toString();
 
                 Properties props = new Properties();
