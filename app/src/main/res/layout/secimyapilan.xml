@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="472dp"
-        android:background="@android:color/background_dark"
+        android:background="@drawable/arkaplan_converted"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -18,21 +18,19 @@
             android:id="@+id/buttonAile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="149dp"
             android:text="Aile"
-            android:src="@drawable/green_buton_aile"
+            android:src="@drawable/aile"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentLeft="true" />
 
         <ImageButton
             android:id="@+id/buttonBebekOdasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bebek Odasını İzle"
-            android:src="@drawable/green_buton_bebek"
-            android:layout_below="@+id/buttonAile"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="61dp" />
+            android:src="@drawable/bebekodasi"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 </ScrollView>
