@@ -37,7 +37,7 @@ public class MotionMonitorActivity extends SensorActivity {
     private static boolean inPreview = false;
     private static IMotionDetection detector = null;
     public  static MotionMonitorActivity ref= null;
-    public static final String PREF_NAME = "com.bebek.takip.hareket.monitor.SMARTSURVEILLANCEACTIVITY";
+    public static final String PREF_NAME = "com.bebek.takip.kamera";
     public static String phoneNumber = null;
     public static String smsContent = null;
     public static long lastSMSsentAt = 0;
@@ -68,17 +68,16 @@ public class MotionMonitorActivity extends SensorActivity {
         long now = System.currentTimeMillis();
         long diff = now - lastSMSsentAt;
         Log.d(TAG, "diff : " + diff);
-        Log.d(TAG, "pre: " + lastSMSsentAt + " now: " + now);
+        Log.d(TAG, "pre: " + lastSMSsentAt + " şimdi: " + now);
         if(diff> 30000){
             lastSMSsentAt = now;
             Calendar calendar = Calendar.getInstance();
             SimpleDateFormat simpledf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			/*PendingIntent pi = PendingIntent.getActivity(context, 0,
-					new Intent(context,MotionMonitorActivity.class), 0);*/
+
             SmsManager sms = SmsManager.getDefault();
             String destinationAddress = phoneNumber;
             String message = smsContent +"\n";
-            message += "detection time: " + simpledf.format(calendar.getTime()) + "";
+            message += "zaman: " + simpledf.format(calendar.getTime()) + "";
             sms.sendTextMessage(destinationAddress, null, message, null,null);
             Log.d(TAG,"sms sent");
         }
@@ -164,6 +163,9 @@ public class MotionMonitorActivity extends SensorActivity {
 
         return result;
     }
+
+
+
     private final class DetectionThread extends Thread{
         private byte[] data;
         private int width;
@@ -193,7 +195,7 @@ public class MotionMonitorActivity extends SensorActivity {
                     sendSMS(ref);
 
                     long now = System.currentTimeMillis();
-                    Log.d(TAG, "motion detected at: "+ now);
+                    Log.d(TAG, "zaman: "+ now);
 
                     Intent startNoise = new Intent("com.bebek.takip.ses.NOISE");
                     startActivity(startNoise);
@@ -204,6 +206,7 @@ public class MotionMonitorActivity extends SensorActivity {
             }finally{
                 processingStarted.set(false);
             }
+
             Log.d(TAG,"End processing");
             processingStarted.set(false);
         }

@@ -44,24 +44,24 @@ public class FarCamActivity extends Activity {
     }
 
     @Override
-   // public boolean onOptionsItemSelected(MenuItem item) {
-      //  switch (item.getItemId()) {
-          //  case 0:
-            //    startActivity(new Intent(this, SettingsActivity.class));
-              //  return true;
-        //}
-       // return false;
-    //}
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0:
+                startActivity(new Intent(this, SettingsActivity.class));
+                return true;
+        }
+        return false;
+    }
 
-    //@Override
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-     //   SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(FarCamActivity.this);
-     //   _forceNoPreview = settings.getBoolean(getString(R.string.settings_key_force_no_preview), false);
-     //   _xResolution = settings.getInt(getString(R.string.settings_key_x_resolution), 640);
-     //   _yResolution = settings.getInt(getString(R.string.settings_key_y_resolution), 480);
-     //   _port = settings.getInt(getString(R.string.settings_key_port), 1234);
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(FarCamActivity.this);
+        _forceNoPreview = settings.getBoolean(getString(R.string.settings_key_force_no_preview), false);
+        _xResolution = settings.getInt(getString(R.string.settings_key_x_resolution), 640);
+        _yResolution = settings.getInt(getString(R.string.settings_key_y_resolution), 480);
+        _port = settings.getInt(getString(R.string.settings_key_port), 1234);
 
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);

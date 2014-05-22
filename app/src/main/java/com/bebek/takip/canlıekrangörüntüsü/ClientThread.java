@@ -12,7 +12,7 @@ import java.net.Socket;
  * Created by yasemin on 5/12/14.
  */
 public class ClientThread implements Runnable{
-    private static final String TAG = "FarCam";
+    private static final String TAG = "Bebektakibi";
 
     TakePictureHelper _picHelper = null;
     Socket _clientSocket = null;

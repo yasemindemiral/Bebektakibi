@@ -47,6 +47,7 @@ public class bebekodasi extends Activity {
         final EditText editOnayla = (EditText) findViewById(R.id.editOnayla);
         final EditText editEposta = (EditText) findViewById(R.id.editEposta);
         final EditText invisible = (EditText) findViewById(R.id.editText);
+        EditText editTelno= (EditText) findViewById(R.id.editTelNo);
         ImageButton buttontamam = (ImageButton) findViewById(R.id.buttonTamam);
         ImageButton buttunOnayla = (ImageButton) findViewById(R.id.buttonOnayla);
         buttontamam.setOnClickListener(new View.OnClickListener() {

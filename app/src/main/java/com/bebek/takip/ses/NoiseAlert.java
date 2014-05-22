@@ -2,22 +2,38 @@ package com.bebek.takip.ses;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SurfaceView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.bebek.takip.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 //thresold 8 ; 8 i geçince kırmızı oluyor.
 /**
  * Created by yasemin on 5/2/14.
  */
 public class NoiseAlert extends Activity  {
+
+    public static long lastSMSsentAt = 0;
+
+    private static final String TAG = "NoiseAlert";
+    public static final String PREF_NAME = "com.bebek.takip.ses.NOISE";
+    private static SurfaceView preview = null;
+    public static String smsContent = null;
+    public static String phoneNumber = null;
+    public  static NoiseAlert ref= null;
     /* constants */
     private static final int POLL_INTERVAL = 300;
 
@@ -33,7 +49,7 @@ public class NoiseAlert extends Activity  {
 
     /* References to view elements */
     private TextView mStatusView;
-    private SoundLevelView mDisplay;
+   // private SoundLevelView mDisplay;
 
     /* sound data source */
     private SoundMeter mSensor;
@@ -42,7 +58,6 @@ public class NoiseAlert extends Activity  {
 
     private Runnable mSleepTask = new Runnable() {
         public void run() {
-            //Log.i("Noise", "runnable mSleepTask");
 
             start();
         }
@@ -54,7 +69,7 @@ public class NoiseAlert extends Activity  {
 
             double amp = mSensor.getAmplitude();
             //Log.i("Noise", "runnable mPollTask");
-            updateDisplay("Monitoring Voice...", amp);
+           // updateDisplay("Monitoring Voice...", amp);
 
             if ((amp > mThreshold)) {
                 callForHelp();
@@ -74,14 +89,18 @@ public class NoiseAlert extends Activity  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ref = this;
+        SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
+        phoneNumber = settings.getString("phoneNumber", "");
+        smsContent = settings.getString("SMSContent", "");
 
         // Defined SoundLevelView in main.xml file
-        setContentView(R.layout.ses);
-        mStatusView = (TextView) findViewById(R.id.status);
+        setContentView(R.layout.preview_surface);
+       // mStatusView = (TextView) findViewById(R.id.status);
 
         // Used to record voice
         mSensor = new SoundMeter();
-        mDisplay = (SoundLevelView) findViewById(R.id.volume);
+        //mDisplay = (SoundLevelView) findViewById(R.id.volume);
 
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "NoiseAlert");
@@ -94,7 +113,7 @@ public class NoiseAlert extends Activity  {
         //Log.i("Noise", "==== onResume ===");
 
         initializeApplicationConstants();
-        mDisplay.setLevel(0, mThreshold);
+        //mDisplay.setLevel(0, mThreshold);
 
         if (!mRunning) {
             mRunning = true;
@@ -133,8 +152,8 @@ public class NoiseAlert extends Activity  {
         mHandler.removeCallbacks(mSleepTask);
         mHandler.removeCallbacks(mPollTask);
         mSensor.stop();
-        mDisplay.setLevel(0,0);
-        updateDisplay("stopped...", 0.0);
+        //mDisplay.setLevel(0,0);
+      //  updateDisplay("stopped...", 0.0);
         mRunning = false;
 
     }
@@ -142,24 +161,46 @@ public class NoiseAlert extends Activity  {
 
     private void initializeApplicationConstants() {
         // Set Noise Threshold
-        mThreshold = 8;
+        mThreshold = 10;
 
     }
 
-    private void updateDisplay(String status, double signalEMA) {
-        mStatusView.setText(status);
-        //
-        mDisplay.setLevel((int)signalEMA, mThreshold);
-    }
 
+    public static void sendSMS(NoiseAlert context) {
+        long now = System.currentTimeMillis();
+        long diff = now - lastSMSsentAt;
+        Log.d(TAG, "diff : " + diff);
+        Log.d(TAG, "pre: " + lastSMSsentAt + " şimdi: " + now);
+        if (diff > 50000) {
+            lastSMSsentAt = now;
+            Calendar calendar = Calendar.getInstance();
+            SimpleDateFormat simpledf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+            SmsManager sms = SmsManager.getDefault();
+            //telefon no yu alamıyor
+            String destinationAddress = "05336600429";
+
+           // String destinationAddress = phoneNumber;
+            String message = "ses" + "\n";
+            message += "zaman: " + simpledf.format(calendar.getTime()) + "";
+            sms.sendTextMessage(destinationAddress, null, message, null, null);
+            Log.d(TAG, "sms sent");
+        }
+    }
 
     private void callForHelp() {
+  //      Toast.makeText(getApplicationContext(), "Yüksek Ses.",
+//                Toast.LENGTH_LONG).show();
+
+       sendSMS(ref);
+
+        long now = System.currentTimeMillis();
+
 
         //stop();
 
         // Show alert when noise thersold crossed
-        Toast.makeText(getApplicationContext(), "Noise Thersold Crossed, do here your stuff.",
-                Toast.LENGTH_LONG).show();
+
     }
 
 };

@@ -20,8 +20,9 @@
             android:layout_height="wrap_content"
             android:text="Aile"
             android:src="@drawable/aile"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true" />
+            android:layout_marginRight="64dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true" />
 
         <ImageButton
             android:id="@+id/buttonBebekOdasi"
@@ -29,8 +30,18 @@
             android:layout_height="wrap_content"
             android:text="Bebek Odasını İzle"
             android:src="@drawable/bebekodasi"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@+id/buttonAile"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="39dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#cc0000"
+            android:text="Cihazı nerede kullanacağınızı seçmelisiniz.Eğer bebeğinizin odasına koyacağınız cihaz ise lütfen BEBEK ODASI seçeneğini, kullanmakta olduğunuz cihaz ise AİLE seçeneğini seçiniz."
+            android:id="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
 
     </RelativeLayout>
 </ScrollView>

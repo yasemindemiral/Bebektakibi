@@ -3,23 +3,30 @@ package com.bebek.takip;
 import android.app.Activity;
 import android.content.Intent;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.bebek.takip.canlıekrangörüntüsü.FarCamActivity;
-import com.bebek.takip.hareket.monitor.SmartSurveillanceActivity;
+
 
 public class MainActivity extends Activity {
     public ImageButton buttonbasla;
+    public ImageButton exit;
+    public ImageButton developers;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_main);
+      //  Drawable loginActivityBackground = findViewById(R.id.layout).getBackground();
+        //loginActivityBackground.setAlpha(127);
+
+
 
         buttonbasla = (ImageButton) findViewById(R.id.buttonBasla);
 
@@ -28,7 +35,19 @@ public class MainActivity extends Activity {
 
             public void onClick(View arg0) {
                 //Starting a new Intent
-                Intent nextScreen = new Intent(getApplicationContext(), FarCamActivity.class);
+                Intent nextScreen = new Intent(getApplicationContext(), secimyapilan.class);
+
+                // starting new activity
+                startActivity(nextScreen);
+
+            }
+        });
+        developers = (ImageButton) findViewById(R.id.developers);
+        developers.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                Intent nextScreen = new Intent(getApplicationContext(), developers.class);
 
                 // starting new activity
                 startActivity(nextScreen);
@@ -36,26 +55,21 @@ public class MainActivity extends Activity {
             }
         });
 
+        exit= (ImageButton) findViewById(R.id.cikis);
+        exit.setOnClickListener(new View.OnClickListener() {
 
-  //  @Override
-   // public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-     //   getMenuInflater().inflate(R.menu.main, menu);
-      //  return true;
-    //}
 
-    //@Override
-    //public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-     //   int id = item.getItemId();
-      //  if (id == R.id.action_settings) {
-       //     return true;
-        //}
-        //return super.onOptionsItemSelected(item);
-    //}
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    finish();
+                    System.exit(0);
+                }
+            });
 
-}
-}
+        }
+    }
+
+
+
+
