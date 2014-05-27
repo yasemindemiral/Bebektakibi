@@ -27,6 +27,7 @@ public class SettingsActivity extends PreferenceActivity {
 
     Preference ipPref = null;
 
+
     private Preference.OnPreferenceChangeListener onResolutionPreferenceChangedListener = new Preference.OnPreferenceChangeListener() {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -108,6 +109,8 @@ public class SettingsActivity extends PreferenceActivity {
         public boolean onPreferenceClick(Preference preference) {
 
             ipPref.setTitle("IP: "+getIPAddress());
+            Toast.makeText(getApplicationContext(), "IP:" + getIPAddress(),
+               Toast.LENGTH_LONG).show();
 
             return true;
         }
@@ -147,3 +150,4 @@ public class SettingsActivity extends PreferenceActivity {
         return "";
     }
 }
+

@@ -13,13 +13,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 import com.bebek.takip.R;
+
+import static com.bebek.takip.canlıekrangörüntüsü.SettingsActivity.getIPAddress;
 
 /**
  * Created by yasemin on 5/12/14.
  */
 public class FarCamActivity extends Activity {
+
     private static final String TAG = "FarCam";
 
     private ServerThread _serverThread = null;
@@ -62,6 +66,8 @@ public class FarCamActivity extends Activity {
         _xResolution = settings.getInt(getString(R.string.settings_key_x_resolution), 640);
         _yResolution = settings.getInt(getString(R.string.settings_key_y_resolution), 480);
         _port = settings.getInt(getString(R.string.settings_key_port), 1234);
+        Toast.makeText(getApplicationContext(), "IP:" + getIPAddress(),
+                Toast.LENGTH_LONG).show();
 
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);

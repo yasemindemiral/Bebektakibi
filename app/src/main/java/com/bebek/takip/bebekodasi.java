@@ -48,8 +48,10 @@ public class bebekodasi extends Activity {
         final EditText editEposta = (EditText) findViewById(R.id.editEposta);
         final EditText invisible = (EditText) findViewById(R.id.editText);
         EditText editTelno= (EditText) findViewById(R.id.editTelNo);
+        ImageButton buttoniptal =(ImageButton) findViewById(R.id.buttonIptal);
         ImageButton buttontamam = (ImageButton) findViewById(R.id.buttonTamam);
-        ImageButton buttunOnayla = (ImageButton) findViewById(R.id.buttonOnayla);
+        ImageButton buttonOnayla = (ImageButton) findViewById(R.id.buttonOnayla);
+
         buttontamam.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
@@ -110,7 +112,7 @@ public class bebekodasi extends Activity {
             }
         });
 
-        buttunOnayla.setOnClickListener(new View.OnClickListener() {
+        buttonOnayla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String randomsayı = invisible.getText().toString();
@@ -126,6 +128,12 @@ public class bebekodasi extends Activity {
                     Toast.makeText(getApplicationContext(),
                             "Yanlış", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        buttoniptal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
