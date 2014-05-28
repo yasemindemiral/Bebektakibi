@@ -2,6 +2,7 @@ package com.bebek.takip.ses;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SurfaceView;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +36,7 @@ public class NoiseAlert extends Activity  {
     public static String smsContent = null;
     public static String phoneNumber = null;
     public  static NoiseAlert ref= null;
+
     /* constants */
     private static final int POLL_INTERVAL = 300;
 
@@ -90,9 +93,15 @@ public class NoiseAlert extends Activity  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ref = this;
-        SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
-        phoneNumber = settings.getString("phoneNumber", "");
-        smsContent = settings.getString("SMSContent", "");
+        setContentView(R.layout.bebekodasi);
+       // String phoneNumber = ((EditText)findViewById(R.id.editTelNo)).getText().toString();
+
+
+       //Toast.makeText(getApplicationContext(), phoneNumber,
+         //     Toast.LENGTH_LONG).show();
+
+
+        //smsContent = settings.getString("SMSContent", "");
 
         // Defined SoundLevelView in main.xml file
         setContentView(R.layout.preview_surface);
@@ -181,7 +190,7 @@ public class NoiseAlert extends Activity  {
             String destinationAddress = "05336600429";
 
            // String destinationAddress = phoneNumber;
-            String message = "ses" + "\n";
+            String message = "Bebeğiniz ağlıyor.." + "\n";
             message += "zaman: " + simpledf.format(calendar.getTime()) + "";
             sms.sendTextMessage(destinationAddress, null, message, null, null);
             Log.d(TAG, "sms sent");
@@ -189,8 +198,8 @@ public class NoiseAlert extends Activity  {
     }
 
     private void callForHelp() {
-  //      Toast.makeText(getApplicationContext(), "Yüksek Ses.",
-//                Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Bebek Ağlıyor..",
+               Toast.LENGTH_LONG).show();
 
        sendSMS(ref);
 

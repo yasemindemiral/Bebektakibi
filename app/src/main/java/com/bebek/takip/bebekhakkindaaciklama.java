@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.bebek.takip.canlıekrangörüntüsü.FarCamActivity;
+
 /**
  * Created by yasemin on 4/27/14.
  */
@@ -27,10 +29,14 @@ public class bebekhakkindaaciklama extends Activity {
         gor.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
-                String url = "http://ydemiral.blogspot.com";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+              //  String url = "http://ydemiral.blogspot.com";
+                //Intent i = new Intent(Intent.ACTION_VIEW);
+                //i.setData(Uri.parse(url));
+                //startActivity(i);
+                Intent nextScreen = new Intent(getApplicationContext(), FarCamActivity.class);
+
+                // starting new activity
+                startActivity(nextScreen);
             }
 
 

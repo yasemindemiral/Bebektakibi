@@ -20,12 +20,9 @@
             android:id="@+id/textAciklamaLayout3"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Bebeğiniz izlemek isterseniz aşağıdaki butona tıklamanız yeterli
-            j
-            n
-            nh
-            nh
-            fbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"/>
+            android:textColor="@android:color/background_dark"
+            android:text="Bebeğinizin anlık görünütüsünü görmek isterseniz lütfen bebek odasındaki cihazın IP'si giriniz ve ardından butona tıklayınız.
+            "/>
 
         <ImageButton
             android:id="@+id/buttonIzleniyor"
@@ -41,10 +38,29 @@
             android:id="@+id/textIzleniyor"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="İzlemeye başlamak için butona basın"
+            android:text=""
             android:layout_marginBottom="68dp"
             android:layout_above="@+id/buttonIzleniyor"
             android:layout_alignParentRight="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/IP"
+            android:layout_below="@+id/textView"
+            android:layout_alignLeft="@+id/buttonIzleniyor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="IP"
+            android:textColor="@android:color/background_dark"
+            android:id="@+id/textView"
+            android:layout_below="@+id/textIzleniyor"
+            android:layout_alignLeft="@+id/editText" />
 
 
     </RelativeLayout>
