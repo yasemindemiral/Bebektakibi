@@ -31,10 +31,11 @@ public class NoiseAlert extends Activity  {
     public static long lastSMSsentAt = 0;
 
     private static final String TAG = "NoiseAlert";
-    public static final String PREF_NAME = "com.bebek.takip.ses.NOISE";
+    public static final String PREF_NAME = "com.bebek.takip.kamera";
     private static SurfaceView preview = null;
     public static String smsContent = null;
     public static String phoneNumber = null;
+
     public  static NoiseAlert ref= null;
 
     /* constants */
@@ -93,12 +94,7 @@ public class NoiseAlert extends Activity  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ref = this;
-        setContentView(R.layout.bebekodasi);
-       // String phoneNumber = ((EditText)findViewById(R.id.editTelNo)).getText().toString();
 
-
-       //Toast.makeText(getApplicationContext(), phoneNumber,
-         //     Toast.LENGTH_LONG).show();
 
 
         //smsContent = settings.getString("SMSContent", "");
@@ -113,6 +109,11 @@ public class NoiseAlert extends Activity  {
 
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "NoiseAlert");
+
+        SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
+        phoneNumber = settings.getString("phoneNumber", "");
+        Toast.makeText(getApplicationContext(), phoneNumber,
+                Toast.LENGTH_LONG).show();
     }
 
 
@@ -186,10 +187,9 @@ public class NoiseAlert extends Activity  {
             SimpleDateFormat simpledf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
             SmsManager sms = SmsManager.getDefault();
-            //telefon no yu alamıyor
-            String destinationAddress = "05336600429";
 
-           // String destinationAddress = phoneNumber;
+
+           String destinationAddress = phoneNumber;
             String message = "Bebeğiniz ağlıyor.." + "\n";
             message += "zaman: " + simpledf.format(calendar.getTime()) + "";
             sms.sendTextMessage(destinationAddress, null, message, null, null);

@@ -37,8 +37,7 @@ public class kamera extends Activity {
                 if(phoneNumber.length() == 0 ){
                     Toast.makeText(getApplicationContext(),
                             "Lütfen telefon no'su giriniz", Toast.LENGTH_LONG).show();
-                   // String msg = (String) getText(R.string.empty_phone_sms_field);
-                    //Toast.makeText(SmartSurveillanceActivity.this, msg, Toast.LENGTH_SHORT).show();
+
                 }
 
                 else{
@@ -63,5 +62,11 @@ public class kamera extends Activity {
     public void onPause(){
         Log.e(TAG, "onPause");
         super.onPause();
+    }
+    @Override
+    public void onBackPressed()
+    {
+
+        //thats it
     }
 }

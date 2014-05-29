@@ -9,6 +9,7 @@ import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 import com.bebek.takip.R;
 import com.bebek.takip.hareket.SensorActivity;
@@ -62,6 +63,8 @@ public class MotionMonitorActivity extends SensorActivity {
         }
         SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
         phoneNumber = settings.getString("phoneNumber", "");
+        Toast.makeText(getApplicationContext(), phoneNumber,
+                Toast.LENGTH_LONG).show();
         smsContent = settings.getString("SMSContent", "");
     }
     public static void sendSMS(MotionMonitorActivity context){

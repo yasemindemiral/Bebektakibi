@@ -60,6 +60,11 @@ public class bebekhakkindaaciklama extends Activity {
         notificationManager.notify(9999, notification);
     }
 
+    @Override
+    public void onBackPressed()
+    {
 
+        //thats it
+    }
 
 }

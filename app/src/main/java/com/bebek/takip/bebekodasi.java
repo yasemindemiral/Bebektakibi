@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -47,10 +48,12 @@ public class bebekodasi extends Activity {
         final EditText editOnayla = (EditText) findViewById(R.id.editOnayla);
         final EditText editEposta = (EditText) findViewById(R.id.editEposta);
         final EditText invisible = (EditText) findViewById(R.id.editText);
-        EditText editTelno= (EditText) findViewById(R.id.editTelNo);
+
         ImageButton buttoniptal =(ImageButton) findViewById(R.id.buttonIptal);
-        ImageButton buttontamam = (ImageButton) findViewById(R.id.buttonTamam);
-        ImageButton buttonOnayla = (ImageButton) findViewById(R.id.buttonOnayla);
+        final ImageButton buttontamam = (ImageButton) findViewById(R.id.buttonTamam);
+        final ImageButton buttonOnayla = (ImageButton) findViewById(R.id.buttonOnayla);
+        final TextView textView = (TextView) findViewById(R.id.textOnayla);
+
 
         buttontamam.setOnClickListener(new View.OnClickListener() {
 
@@ -61,6 +64,10 @@ public class bebekodasi extends Activity {
                 //txt.setText(String.valueOf(rNumber));
                 final String rNumber = rndnumber.toString();
                 invisible.setText(String.valueOf(rndnumber));
+                textView.setVisibility(View.VISIBLE);
+                editOnayla.setVisibility(View.VISIBLE);
+                buttonOnayla.setVisibility(View.VISIBLE);
+
 
 
 
@@ -115,20 +122,22 @@ public class bebekodasi extends Activity {
         buttonOnayla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String randomsayı = invisible.getText().toString();
-                final String onaykodu = editOnayla.getText().toString();
 
-                if(randomsayı.equals(onaykodu)){
-                    Toast.makeText(getApplicationContext(),
-                            "Doğru", Toast.LENGTH_LONG).show();
-                    Intent nextScreen = new Intent(getApplicationContext(), kamera.class);
-                    startActivity(nextScreen);
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),
-                            "Yanlış", Toast.LENGTH_LONG).show();
-                }
+                    final String randomsayı = invisible.getText().toString();
+                    final String onaykodu = editOnayla.getText().toString();
+
+                    if (randomsayı.equals(onaykodu)) {
+                        Toast.makeText(getApplicationContext(),
+                                "Doğru", Toast.LENGTH_LONG).show();
+                        Intent nextScreen = new Intent(getApplicationContext(), kamera.class);
+                        startActivity(nextScreen);
+                    } else {
+                        Toast.makeText(getApplicationContext(),
+                                "Yanlış", Toast.LENGTH_LONG).show();
+                    }
+
             }
+
         });
         buttoniptal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +145,12 @@ public class bebekodasi extends Activity {
                 finish();
             }
         });
+    }
+    @Override
+    public void onBackPressed()
+    {
+
+        //thats it
     }
 
 

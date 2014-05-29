@@ -36,7 +36,7 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:textColor="@android:color/background_dark"
-        />
+        android:text="yasmindemiral@gmail.com" />
 
     <ImageButton
         android:id="@+id/buttonTamam"
@@ -47,6 +47,7 @@
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/editText" />
     <TextView
+        android:visibility="invisible"
         android:id="@+id/textOnayla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,30 +59,26 @@
         android:id="@+id/editOnayla"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+
         android:inputType="text"
         android:layout_above="@+id/buttonOnayla"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="87dp"
-        android:textColor="@android:color/background_dark"/>
+        android:textColor="@android:color/background_dark"
+        android:visibility="invisible"/>
 
     <ImageButton
         android:id="@+id/buttonOnayla"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Onayla"
         android:src="@drawable/onayla"
-        android:layout_alignTop="@+id/buttonIptal"
-        android:layout_toRightOf="@+id/editText" />
-
-    <ImageButton
-        android:id="@+id/buttonIptal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="İptal"
-        android:src="@drawable/iptal"
+        android:visibility="invisible"
         android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/editText"
         android:layout_alignRight="@+id/editOnayla" />
+
+
 
     <EditText
         android:layout_width="wrap_content"
@@ -108,7 +105,23 @@
         android:layout_below="@+id/telNo"
         android:layout_alignParentLeft="true"
         android:inputType="phone"
-        android:textColor="@android:color/background_dark"/>
+        android:textColor="@android:color/background_dark"
+        android:text="05336600429" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:layout_alignBottom="@+id/buttonTamam"
+        android:layout_toRightOf="@+id/telNo" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonIptal"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/telNo"
+        android:src="@drawable/iptal" />
 
 
 </RelativeLayout>
