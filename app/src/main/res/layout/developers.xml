@@ -6,7 +6,7 @@
     android:background="@drawable/arkaplan_converted"
     android:weightSum="1">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/hakkimizda"
@@ -16,31 +16,65 @@
         android:textColor="@android:color/background_dark"
         android:background="@android:color/transparent"/>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/yasemin"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/yasemin" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nigar"
-        android:src="@drawable/nigar" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/hilal"
-        android:src="@drawable/hilal"
-        android:layout_gravity="right" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
         android:id="@+id/github"
-        android:src="@drawable/git"
-        android:layout_gravity="center_horizontal|bottom" />
+
+        android:text="GITHUB"
+        android:textColor="#ff7fffe6"
+        android:textSize="16sp"
+
+        android:layout_width="143dp"
+        android:layout_height="45dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#ffc270d5"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+
+        android:id="@+id/yasemin"
+        android:text="YASEMIN DEMIRAL"
+        android:textColor="#ff7fffe6"
+        android:textSize="16sp"
+
+        android:layout_width="164dp"
+        android:layout_height="45dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#ffc270d5"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0" />
+
+    <Button
+        android:id="@+id/nigar"
+        android:text="NİGAR KOCAMAN"
+        android:textColor="#ff7fffe6"
+        android:textSize="16sp"
+
+        android:layout_width="161dp"
+        android:layout_height="45dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#ffc270d5"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/hilal"
+        android:text="AYŞE HİLAL BIÇAKCI"
+        android:textColor="#ff7fffe6"
+        android:textSize="16sp"
+
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#ffc270d5"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:layout_gravity="right" />
 
 </LinearLayout>

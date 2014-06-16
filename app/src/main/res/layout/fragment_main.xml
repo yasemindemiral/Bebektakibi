@@ -1,15 +1,11 @@
 
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.bebek.MainActivity$PlaceholderFragment"
-    android:id="@+id/scroll"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="472dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:background="@drawable/arkaplan_converted"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -25,34 +21,58 @@
             android:text="Merhabalar Hoşgeldiniz;\nOdasında uyuyan bebeğinizi rahatıkla kontrol edebileceğiniz bir uygulama tasarladık.
              "/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
             android:id="@+id/buttonBasla"
-            android:src="@drawable/uygbasla"
-            android:layout_above="@+id/cikis"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="84dp"
-            android:layout_centerInParent="true" />
+            android:text="UYGULAMAYI KULLANMAYA BAŞLA"
+            android:textColor="#ff7fffe6"
+            android:textSize="16sp"
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#ffc270d5"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+            android:layout_below="@+id/textAciklama"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="99dp" />
+
+        <Button
             android:id="@+id/developers"
-            android:src="@drawable/gelisticiler"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:cropToPadding="false" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:text="DEVELOPERS"
+            android:textColor="#ff7fffe6"
+            android:textSize="16sp"
+
+            android:layout_width="143dp"
+            android:layout_height="45dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#ffc270d5"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+
+            android:layout_alignBaseline="@+id/cikis"
+            android:layout_alignBottom="@+id/cikis"
+            android:layout_alignParentLeft="true" />
+
+        <Button
             android:id="@+id/cikis"
+            android:text="ÇIKIŞ"
+            android:textColor="#ff7fffe6"
+            android:textSize="16sp"
+
+            android:layout_width="143dp"
+            android:layout_height="45dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#ffc270d5"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+            android:layout_marginBottom="113dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/buttonBasla"
-            android:layout_marginRight="44dp"
-            android:src="@drawable/exit" />
+            android:layout_alignParentRight="true" />
 
 
     </RelativeLayout>
-</ScrollView>

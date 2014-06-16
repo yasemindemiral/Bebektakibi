@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +27,7 @@ public class kamera extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bebekodasi);
+        setContentView(R.layout.kamera);
         SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
 
         ((EditText)findViewById(R.id.editTelNo)).setText(settings.getString("phoneNumber", ""));

@@ -5,20 +5,20 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 /**
  * Created by yasemin on 5/15/14.
  */
 public class developers extends Activity {
 
-    ImageButton yasemin;
-ImageButton github;
+    Button yasemin;
+Button github;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.developers);
 
-        yasemin = (ImageButton) findViewById(R.id.yasemin);
+        yasemin = (Button) findViewById(R.id.yasemin);
 
         //Listening to button event
         yasemin.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +29,7 @@ ImageButton github;
                 startActivity(myWebLink);
             }
         });
-        github= (ImageButton) findViewById(R.id.github);
+        github= (Button) findViewById(R.id.github);
        github.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {

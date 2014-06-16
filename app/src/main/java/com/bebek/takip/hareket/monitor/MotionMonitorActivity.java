@@ -38,8 +38,8 @@ public class MotionMonitorActivity extends SensorActivity {
     private static boolean inPreview = false;
     private static IMotionDetection detector = null;
     public  static MotionMonitorActivity ref= null;
-    public static final String PREF_NAME = "com.bebek.takip.kamera";
-    public static String phoneNumber = null;
+    public static final String PREF_NAME = "com.bebek.takip.bebekodasi";
+    public static String phoneNumber ;
     public static String smsContent = null;
     public static long lastSMSsentAt = 0;
     private volatile static AtomicBoolean processingStarted = new AtomicBoolean(false);

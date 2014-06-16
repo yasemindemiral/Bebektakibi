@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.bebek.takip.secimyapilan" />
-        <activity android:name="com.bebek.takip.bebekodasi" />
+
         <activity android:name="com.bebek.takip.bebekhakkindaaciklama" />
         <activity android:name="com.bebek.takip.developers" />
         <activity android:name="com.bebek.takip.canlıekrangörüntüsü.FarCamActivity" />
@@ -54,10 +54,10 @@
         </activity>
         <activity
             android:label="@string/app_name"
-            android:name="com.bebek.takip.kamera"
+            android:name="com.bebek.takip.bebekodasi"
             android:screenOrientation="portrait">
             <intent-filter >
-                <action android:name="com.bebek.takip.kamera" />
+                <action android:name="com.bebek.takip.bebekodasi" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

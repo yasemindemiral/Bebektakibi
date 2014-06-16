@@ -31,21 +31,28 @@
         android:id="@+id/editEposta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textEpostaGir"
-        android:layout_below="@+id/textEpostaGir"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:textColor="@android:color/background_dark"
-        android:text="yasmindemiral@gmail.com" />
+        android:textColor="#cc0000"
+        android:text="yasmindemiral@gmail.com"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true" />
 
-    <ImageButton
+    <Button
         android:id="@+id/buttonTamam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tamam"
-        android:src="@drawable/tamam"
+        android:text="TAMAM"
+        android:textColor="#ff7fffe6"
+        android:textSize="16sp"
+
+        android:layout_width="143dp"
+        android:layout_height="45dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#ffc270d5"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/editText" />
+        android:layout_alignParentLeft="true" />
     <TextView
         android:visibility="invisible"
         android:id="@+id/textOnayla"
@@ -64,15 +71,22 @@
         android:layout_above="@+id/buttonOnayla"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="87dp"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#cc0000"
         android:visibility="invisible"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/buttonOnayla"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Onayla"
-        android:src="@drawable/onayla"
+        android:text="ONAYLA"
+        android:textColor="#ff7fffe6"
+        android:textSize="16sp"
+
+        android:layout_width="143dp"
+        android:layout_height="45dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#ffc270d5"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
         android:visibility="invisible"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/editText"
@@ -105,23 +119,40 @@
         android:layout_below="@+id/telNo"
         android:layout_alignParentLeft="true"
         android:inputType="phone"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#cc0000"
         android:text="05336600429" />
 
-    <ImageButton
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton"
-        android:layout_alignBottom="@+id/buttonTamam"
+
         android:layout_toRightOf="@+id/telNo" />
 
-    <ImageButton
+    <Button
+        android:id="@+id/buttonIptal"
+        android:text="İPTAL"
+        android:textColor="#ff7fffe6"
+        android:textSize="16sp"
+
+        android:layout_width="143dp"
+        android:layout_height="45dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#ffc270d5"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:layout_alignTop="@+id/buttonTamam"
+        android:layout_toRightOf="@+id/telNo" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonIptal"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/telNo"
-        android:src="@drawable/iptal" />
+        android:text="E-posta Adresinizi Giriniz.."
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/textView"
+        android:layout_below="@+id/textEpostaGir"
+        android:layout_alignParentLeft="true" />
 
 
 </RelativeLayout>

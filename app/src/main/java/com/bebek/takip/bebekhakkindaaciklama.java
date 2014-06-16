@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 import com.bebek.takip.canlıekrangörüntüsü.FarCamActivity;
 
@@ -25,7 +25,7 @@ public class bebekhakkindaaciklama extends Activity {
         setContentView(R.layout.bebekhakkindaaciklama);
         Notify("Bebek Takibi:" ,"Bebeğiniz Takip Ediliyor..");
 
-        ImageButton gor = (ImageButton)findViewById(R.id.buttonIzleniyor);
+        Button gor = (Button)findViewById(R.id.buttonIzleniyor);
         gor.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
@@ -60,11 +60,6 @@ public class bebekhakkindaaciklama extends Activity {
         notificationManager.notify(9999, notification);
     }
 
-    @Override
-    public void onBackPressed()
-    {
 
-        //thats it
-    }
 
 }

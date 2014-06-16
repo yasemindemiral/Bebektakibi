@@ -14,18 +14,20 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 /**
  * Created by yasemin on 4/30/14.
  */
+
 
 class GmailAuthenticator extends Authenticator{
     String user;
@@ -41,7 +43,13 @@ class GmailAuthenticator extends Authenticator{
     }
 
 }
+
 public class bebekodasi extends Activity {
+    private static final String TAG = "Bebektakibi";
+    public static final String PREF_NAME = "com.bebek.takip.bebekodasi";
+    // private static int smsLength = 124;
+
+    String smsContent = "Bebeğiniz uyanabilir";
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bebekodasi);
@@ -49,10 +57,31 @@ public class bebekodasi extends Activity {
         final EditText editEposta = (EditText) findViewById(R.id.editEposta);
         final EditText invisible = (EditText) findViewById(R.id.editText);
 
-        ImageButton buttoniptal =(ImageButton) findViewById(R.id.buttonIptal);
-        final ImageButton buttontamam = (ImageButton) findViewById(R.id.buttonTamam);
-        final ImageButton buttonOnayla = (ImageButton) findViewById(R.id.buttonOnayla);
+        Button buttoniptal =(Button) findViewById(R.id.buttonIptal);
+        final Button buttontamam = (Button) findViewById(R.id.buttonTamam);
+        final Button buttonOnayla = (Button) findViewById(R.id.buttonOnayla);
         final TextView textView = (TextView) findViewById(R.id.textOnayla);
+
+        SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
+
+       // ((EditText) findViewById(R.id.editTelNo)).setText(settings.getString("phoneNumber", ""));
+
+        String phoneNumber = ((EditText) findViewById(R.id.editTelNo)).getText().toString();
+        //  String smsContent = ((EditText)findViewById(R.id.sms_content)).getText().toString();
+        if (phoneNumber.length() == 0) {
+            Toast.makeText(getApplicationContext(),
+                    "Lütfen telefon no'su giriniz", Toast.LENGTH_LONG).show();
+
+        } else {
+
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString("phoneNumber", phoneNumber);
+            editor.putString("SMSContent", smsContent);
+            editor.commit();
+
+
+        }
+
 
 
         buttontamam.setOnClickListener(new View.OnClickListener() {
@@ -129,8 +158,8 @@ public class bebekodasi extends Activity {
                     if (randomsayı.equals(onaykodu)) {
                         Toast.makeText(getApplicationContext(),
                                 "Doğru", Toast.LENGTH_LONG).show();
-                        Intent nextScreen = new Intent(getApplicationContext(), kamera.class);
-                        startActivity(nextScreen);
+                        Intent startMotionDetection = new Intent("com.bebek.takip.hareket.monitor.MONITOR");
+                        startActivity(startMotionDetection);
                     } else {
                         Toast.makeText(getApplicationContext(),
                                 "Yanlış", Toast.LENGTH_LONG).show();
@@ -146,12 +175,7 @@ public class bebekodasi extends Activity {
             }
         });
     }
-    @Override
-    public void onBackPressed()
-    {
 
-        //thats it
-    }
 
 
 }

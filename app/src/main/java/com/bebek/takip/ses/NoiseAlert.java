@@ -31,7 +31,7 @@ public class NoiseAlert extends Activity  {
     public static long lastSMSsentAt = 0;
 
     private static final String TAG = "NoiseAlert";
-    public static final String PREF_NAME = "com.bebek.takip.kamera";
+    public static final String PREF_NAME = "com.bebek.takip.bebekodasi";
     private static SurfaceView preview = null;
     public static String smsContent = null;
     public static String phoneNumber = null;

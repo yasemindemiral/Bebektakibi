@@ -11,15 +11,15 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 import com.bebek.takip.canlıekrangörüntüsü.FarCamActivity;
 
 
 public class MainActivity extends Activity {
-    public ImageButton buttonbasla;
-    public ImageButton exit;
-    public ImageButton developers;
+    public Button buttonbasla;
+    public Button exit;
+    public Button developers;
 
 
     @Override
@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
         Notify("Bebek Takibi:", " Hoşgeldiniz..");
         //  Drawable loginActivityBackground = findViewById(R.id.layout).getBackground();
         //loginActivityBackground.setAlpha(127);
-        exit= (ImageButton) findViewById(R.id.cikis);
+        exit= (Button) findViewById(R.id.cikis);
         exit.setOnClickListener(new View.OnClickListener() {
 
 
@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        buttonbasla = (ImageButton) findViewById(R.id.buttonBasla);
+        buttonbasla = (Button) findViewById(R.id.buttonBasla);
 
         //Listening to button event
         buttonbasla.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 
             }
         });
-        developers = (ImageButton) findViewById(R.id.developers);
+        developers = (Button) findViewById(R.id.developers);
         developers.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
