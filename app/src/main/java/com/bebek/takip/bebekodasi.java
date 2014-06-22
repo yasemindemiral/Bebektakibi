@@ -64,7 +64,7 @@ public class bebekodasi extends Activity {
 
         SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
 
-       // ((EditText) findViewById(R.id.editTelNo)).setText(settings.getString("phoneNumber", ""));
+        // ((EditText) findViewById(R.id.editTelNo)).setText(settings.getString("phoneNumber", ""));
 
         String phoneNumber = ((EditText) findViewById(R.id.editTelNo)).getText().toString();
         //  String smsContent = ((EditText)findViewById(R.id.sms_content)).getText().toString();
@@ -152,18 +152,18 @@ public class bebekodasi extends Activity {
             @Override
             public void onClick(View v) {
 
-                    final String randomsayı = invisible.getText().toString();
-                    final String onaykodu = editOnayla.getText().toString();
+                final String randomsayı = invisible.getText().toString();
+                final String onaykodu = editOnayla.getText().toString();
 
-                    if (randomsayı.equals(onaykodu)) {
-                        Toast.makeText(getApplicationContext(),
-                                "Doğru", Toast.LENGTH_LONG).show();
-                        Intent startMotionDetection = new Intent("com.bebek.takip.hareket.monitor.MONITOR");
-                        startActivity(startMotionDetection);
-                    } else {
-                        Toast.makeText(getApplicationContext(),
-                                "Yanlış", Toast.LENGTH_LONG).show();
-                    }
+                if (randomsayı.equals(onaykodu)) {
+                    Toast.makeText(getApplicationContext(),
+                            "Doğru", Toast.LENGTH_LONG).show();
+                    Intent startMotionDetection = new Intent("com.bebek.takip.hareket.monitor.MONITOR");
+                    startActivity(startMotionDetection);
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Yanlış", Toast.LENGTH_LONG).show();
+                }
 
             }
 

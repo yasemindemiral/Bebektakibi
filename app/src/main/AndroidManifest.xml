@@ -30,8 +30,7 @@
 
         <activity android:name="com.bebek.takip.bebekhakkindaaciklama" />
         <activity android:name="com.bebek.takip.developers" />
-        <activity android:name="com.bebek.takip.canlıekrangörüntüsü.FarCamActivity" />
-        <activity android:name="com.bebek.takip.canlıekrangörüntüsü.SettingsActivity" />
+
 
         <activity
             android:label="@string/app_name"

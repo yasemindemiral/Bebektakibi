@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Button;
 
-import com.bebek.takip.canlıekrangörüntüsü.FarCamActivity;
+
 
 
 public class MainActivity extends Activity {

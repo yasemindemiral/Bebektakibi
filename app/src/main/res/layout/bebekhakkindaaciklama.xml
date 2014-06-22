@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.bebek.MainActivity$PlaceholderFragment"
 
-    android:background="@drawable/arkaplan_converted"
+    android:background="@drawable/uyuyan"
 
 
 
@@ -17,58 +17,25 @@
 
         <TextView
             android:id="@+id/textAciklamaLayout3"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Siz rahat olun bebeğinizi biz takip ediyoruz.
+            "
             android:textColor="@android:color/background_dark"
-            android:text="Bebeğinizin anlık görünütüsünü görmek isterseniz lütfen bebek odasındaki cihazın IP'si giriniz ve ardından butona tıklayınız.
-            "/>
+            android:layout_marginTop="78dp"
+            android:textSize="14dp"
+            android:layout_below="@+id/textIzleniyor"
+            android:layout_alignRight="@+id/textIzleniyor"
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
-        <Button
-            android:id="@+id/buttonIzleniyor"
-            android:text="BEBEĞİNİZİN FOTOĞRAFINI GÖRÜN"
-            android:textColor="#ff7fffe6"
-            android:textSize="16sp"
-
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:background="@drawable/buttonshape"
-            android:shadowColor="#ffc270d5"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="0"
-            android:layout_marginBottom="93dp"
-            android:layout_alignBottom="@+id/textAciklamaLayout3"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
+    <TextView
             android:id="@+id/textIzleniyor"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text=""
-            android:layout_marginBottom="68dp"
-            android:layout_above="@+id/buttonIzleniyor"
-            android:layout_alignParentRight="true" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:textColor="#cc0000"
-            android:id="@+id/IP"
-            android:layout_marginTop="104dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/buttonIzleniyor" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="IP"
-            android:textColor="@android:color/background_dark"
-            android:id="@+id/textView"
-            android:layout_alignBottom="@+id/IP"
-            android:layout_alignLeft="@+id/buttonIzleniyor" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
 
 
-    </RelativeLayout>
+</RelativeLayout>

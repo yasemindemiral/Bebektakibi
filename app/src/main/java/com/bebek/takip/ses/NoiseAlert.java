@@ -53,7 +53,7 @@ public class NoiseAlert extends Activity  {
 
     /* References to view elements */
     private TextView mStatusView;
-   // private SoundLevelView mDisplay;
+    // private SoundLevelView mDisplay;
 
     /* sound data source */
     private SoundMeter mSensor;
@@ -72,16 +72,15 @@ public class NoiseAlert extends Activity  {
         public void run() {
 
             double amp = mSensor.getAmplitude();
-            //Log.i("Noise", "runnable mPollTask");
-           // updateDisplay("Monitoring Voice...", amp);
+
 
             if ((amp > mThreshold)) {
                 callForHelp();
-                //Log.i("Noise", "==== onCreate ===");
+              ;
 
             }
 
-            // Runnable(mPollTask) will again execute after POLL_INTERVAL
+
             mHandler.postDelayed(mPollTask, POLL_INTERVAL);
 
         }
@@ -93,15 +92,13 @@ public class NoiseAlert extends Activity  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.surface_view);
+
+
         ref = this;
 
-
-
-        //smsContent = settings.getString("SMSContent", "");
-
-        // Defined SoundLevelView in main.xml file
         setContentView(R.layout.preview_surface);
-       // mStatusView = (TextView) findViewById(R.id.status);
+       
 
         // Used to record voice
         mSensor = new SoundMeter();
@@ -112,8 +109,7 @@ public class NoiseAlert extends Activity  {
 
         SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
         phoneNumber = settings.getString("phoneNumber", "");
-        Toast.makeText(getApplicationContext(), phoneNumber,
-                Toast.LENGTH_LONG).show();
+
     }
 
 
@@ -128,13 +124,15 @@ public class NoiseAlert extends Activity  {
         if (!mRunning) {
             mRunning = true;
             start();
+
+
         }
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        // Log.i("Noise", "==== onStop ===");
+
 
         //Stop noise monitoring
         stop();
@@ -152,6 +150,13 @@ public class NoiseAlert extends Activity  {
         //Noise monitoring start
         // Runnable(mPollTask) will execute after POLL_INTERVAL
         mHandler.postDelayed(mPollTask, POLL_INTERVAL);
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Intent startMotionDetection = new Intent("com.bebek.takip.hareket.monitor.MONITOR");
+        startActivity(startMotionDetection);
     }
 
     private void stop() {
@@ -163,7 +168,7 @@ public class NoiseAlert extends Activity  {
         mHandler.removeCallbacks(mPollTask);
         mSensor.stop();
         //mDisplay.setLevel(0,0);
-      //  updateDisplay("stopped...", 0.0);
+        //  updateDisplay("stopped...", 0.0);
         mRunning = false;
 
     }
@@ -181,7 +186,7 @@ public class NoiseAlert extends Activity  {
         long diff = now - lastSMSsentAt;
         Log.d(TAG, "diff : " + diff);
         Log.d(TAG, "pre: " + lastSMSsentAt + " şimdi: " + now);
-        if (diff > 50000) {
+        if (diff > 30000) {
             lastSMSsentAt = now;
             Calendar calendar = Calendar.getInstance();
             SimpleDateFormat simpledf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -189,7 +194,7 @@ public class NoiseAlert extends Activity  {
             SmsManager sms = SmsManager.getDefault();
 
 
-           String destinationAddress = phoneNumber;
+            String destinationAddress = phoneNumber;
             String message = "Bebeğiniz ağlıyor.." + "\n";
             message += "zaman: " + simpledf.format(calendar.getTime()) + "";
             sms.sendTextMessage(destinationAddress, null, message, null, null);
@@ -199,16 +204,14 @@ public class NoiseAlert extends Activity  {
 
     private void callForHelp() {
         Toast.makeText(getApplicationContext(), "Bebek Ağlıyor..",
-               Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();
 
-       sendSMS(ref);
+        sendSMS(ref);
 
         long now = System.currentTimeMillis();
 
 
-        //stop();
 
-        // Show alert when noise thersold crossed
 
     }
 

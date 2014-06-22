@@ -62,7 +62,6 @@
     <orderEntry type="jdk" jdkName="Android API 15 Platform (1)" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="mail" level="project" />
-    <orderEntry type="library" exported="" name="opencv library - 2.4.8" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-19.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.1.0" level="project" />
     <orderEntry type="library" exported="" name="additionnal" level="project" />

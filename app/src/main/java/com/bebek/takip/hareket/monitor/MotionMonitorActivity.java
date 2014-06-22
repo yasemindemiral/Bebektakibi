@@ -48,24 +48,30 @@ public class MotionMonitorActivity extends SensorActivity {
         super.onCreate(savedInstanceState);
         ref = this;
         setContentView(R.layout.surface_view);
-        Log.e("motionMonitor","onCreate");
-        preview = (SurfaceView)findViewById(R.id.preview);
+        Log.e("motionMonitor", "onCreate");
+        preview = (SurfaceView) findViewById(R.id.preview);
         previewHolder = preview.getHolder();
         previewHolder.addCallback(surfaceCallback);
         previewHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-        if(Preferences.USE_RGB){
-            detector = new RgbMotionDetection();
-        }else if (Preferences.USE_LUMA){
-            detector = new LumaMotionDetection();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        else{
-            detector = new AggregateLumaMotionDetection();
-        }
-        SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
-        phoneNumber = settings.getString("phoneNumber", "");
-        Toast.makeText(getApplicationContext(), phoneNumber,
-                Toast.LENGTH_LONG).show();
-        smsContent = settings.getString("SMSContent", "");
+
+
+        if (Preferences.USE_RGB) {
+                detector = new RgbMotionDetection();
+            } else if (Preferences.USE_LUMA) {
+                detector = new LumaMotionDetection();
+            } else {
+                detector = new AggregateLumaMotionDetection();
+            }
+            SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
+            phoneNumber = settings.getString("phoneNumber", "");
+
+            smsContent = settings.getString("SMSContent", "");
+
     }
     public static void sendSMS(MotionMonitorActivity context){
         long now = System.currentTimeMillis();
@@ -195,10 +201,14 @@ public class MotionMonitorActivity extends SensorActivity {
                 long aConversion = System.currentTimeMillis();
                 Log.d(TAG, "conversion=" + (aConversion - bConversion));
                 if(img!=null &&detector.detect(img, width, height)){
+
+                    Thread.sleep(5000);
+               
                     sendSMS(ref);
 
                     long now = System.currentTimeMillis();
                     Log.d(TAG, "zaman: "+ now);
+                    Thread.sleep(5000);
 
                     Intent startNoise = new Intent("com.bebek.takip.ses.NOISE");
                     startActivity(startNoise);
